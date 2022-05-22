@@ -13,6 +13,7 @@ DATA_DIR = os.path.join(BASE_DIR, "data")
 
 def run_command(iter_obj: Iterator, query: str) -> Iterator:
     query_items = query.split('|')
+    data: Iterator
     data = iter(map(lambda v: v.strip(), iter_obj))
     for item in query_items:
         if ":" in item:
